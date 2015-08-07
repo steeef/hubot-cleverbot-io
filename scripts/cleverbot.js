@@ -8,8 +8,7 @@
 //   Set up your API keys at https://cleverbot.io/keys
 //   HUBOT_CLEVERBOT_IO_API_USER
 //   HUBOT_CLEVERBOT_IO_API_KEY
-//
-//   You can set up a custom nick in config.json, but it's not required.
+//   HUBOT_CLEVERBOT_IO_NICK: Optional: Nickname
 //
 // Commands:
 //   hubot chat <dialog>  - returns cleverbot's response to your dialog
@@ -27,7 +26,7 @@
         var findSelf = new RegExp('^[@]?(' + robot.name + ')' + (robot.alias ? '|(' + robot.alias + ')' : '') + '[:,]?\\s', 'i');
         robot.hear(/.*/i, function(msg) {
             if (findSelf.test(msg.message.text)) {
-                bot.setNick(config.nick || "generic_nick");
+                bot.setNick(process.env.HUBOT_CLEVERBOT_IO_NICK || "generic_nick");
                 bot.create(function(err, session) {
                     bot.ask(msg.message.text, function(err, response) {
                         if (err) console.log(err);
