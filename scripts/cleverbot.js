@@ -6,8 +6,8 @@
 //
 // Configuration:
 //   Set up your API keys at https://cleverbot.io/keys
-//   HUBOT_CLEVERBOT_IO_USER
-//   HUBOT_CLEVERBOT_IO_KEY
+//   HUBOT_CLEVERBOT_IO_API_USER
+//   HUBOT_CLEVERBOT_IO_API_KEY
 //
 //   You can set up a custom nick in config.json, but it's not required.
 //
@@ -19,8 +19,8 @@
 //   Stephen Price - https://github.com/steeef
 
 (function() {
-    var api_user = process.env.HUBOT_CLEVERBOT_IO_USER,
-    api_key = process.env.HUBOT_CLEVERBOT_IO_KEY,
+    var api_user = process.env.HUBOT_CLEVERBOT_IO_API_USER,
+    api_key = process.env.HUBOT_CLEVERBOT_IO_API_KEY,
     cleverbot = require("cleverbot.io");
     bot = new cleverbot(api_user, api_key);
     module.exports = function(robot) {

@@ -9,8 +9,8 @@ To set up your API keys for the cleverbot.io service, head over to
 user and key into these environment variables:
 
 ```
-HUBOT_CLEVERBOT_IO_USER
-HUBOT_CLEVERBOT_IO_KEY
+HUBOT_CLEVERBOT_IO_API_USER
+HUBOT_CLEVERBOT_IO_API_KEY
 ```
 
 ### Usage
